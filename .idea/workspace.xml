@@ -57,24 +57,36 @@
       <option name="presentableId" value="Default" />
       <updated>1578398604164</updated>
     </task>
+    <task id="LOCAL-00001" summary="Checking for parameter types of method">
+      <created>1578475894340</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578475894340</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Checking for parameter types of method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking for parameter types of method" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578398712017">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578398712017" />
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578475841713">
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578475894244">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475841713" />
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475894244" />
     <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578459513751">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1853.1053@0.27.1853.1053" timestamp="1578459513751" />
-    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578475757574">
+    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578475906766">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475757574" />
+    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475906766" />
   </component>
 </project>
