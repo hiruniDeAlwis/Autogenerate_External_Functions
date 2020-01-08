@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4e5a63d-d1b7-42d2-96bd-3462142482ff" name="Default Changelist" comment="" />
+    <list default="true" id="f4e5a63d-d1b7-42d2-96bd-3462142482ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bal_Project/src/module_bal/external_functions.bal" beforeDir="false" afterPath="$PROJECT_DIR$/Bal_Project/src/module_bal/external_functions.bal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/TestJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/TestJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/org/wso2/ei/b7a/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/org/wso2/ei/b7a/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/org/wso2/ei/b7a/TestJava.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/org/wso2/ei/b7a/TestJava.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/lib-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/lib-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/surefire-reports/TEST-org.wso2.ei.b7a.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/surefire-reports/TEST-org.wso2.ei.b7a.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/surefire-reports/org.wso2.ei.b7a.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/surefire-reports/org.wso2.ei.b7a.AppTest.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="ProjectId" id="1W4AgYkmgCn8CCxfMjMCFd8LxBE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -15,7 +31,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/myapp3" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -47,5 +64,17 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578398712017" />
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578475841713">
+      <screen x="0" y="27" width="1853" height="1053" />
+    </state>
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475841713" />
+    <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578459513751">
+      <screen x="0" y="27" width="1853" height="1053" />
+    </state>
+    <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1853.1053@0.27.1853.1053" timestamp="1578459513751" />
+    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578475757574">
+      <screen x="0" y="27" width="1853" height="1053" />
+    </state>
+    <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475757574" />
   </component>
 </project>

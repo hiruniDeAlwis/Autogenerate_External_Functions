@@ -37,8 +37,22 @@ public class App {
             Method[] methods = cls.getDeclaredMethods();
             for (Method method:methods) {
                 wObj.write("function ");
-                wObj.write(method.getName());
-                wObj.write("() ");
+                wObj.write(method.getName()+" ");
+
+                Parameter[] parameter = method.getParameters();
+                if (parameter == null) {
+                    wObj.write("()");
+                }
+                else{
+                    wObj.write("(");
+                    for(int i=0;i<parameter.length;i++){
+                        wObj.write(parameter[i].getParameterizedType() + " " + parameter[i].getName());
+                        if(i<parameter.length-1){
+                            wObj.write(" , ");
+                        }
+                    }
+                    wObj.write(")");
+                }
                 Class returnParam = method.getReturnType();
                 String returnType=returnParam.getName();
                 if( returnType!= "void"){

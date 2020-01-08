@@ -5,8 +5,8 @@ public class TestJava{
         System.out.println("Hello World!");
     }
 
-    public static int add() {
-        int sum=1+2;
+    public static int add(int x,int y) {
+        int sum=x+y;
         return sum;
     }
 }
