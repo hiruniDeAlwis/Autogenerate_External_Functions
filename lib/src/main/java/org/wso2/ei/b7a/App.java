@@ -31,7 +31,7 @@ public class App {
         TestJava obj = new TestJava();
         Class cls = obj.getClass();
         classFullName=giveFullClass(cls);
-        writeMethod(cls,classFullName);
+        writeToStream(cls,classFullName);
     }
 
     public static String giveFullClass(Class cls) {
@@ -46,7 +46,7 @@ public class App {
         return simpleName;
     }
 
-    public static String writeMethod(Class cls,String classFullName){
+    public static String writeToStream(Class cls,String classFullName){
 
             List<String> list = new ArrayList<>();
             list.add(HEADER+SEMICOLON+NEW_LINE+NEW_LINE);
@@ -93,16 +93,10 @@ public class App {
     }
 
     public static <T> void getStream(List<T> list){
-        try {
             Stream<T> stream = list.stream();
             Iterator<T> it = stream.iterator();
             while (it.hasNext()) {
                 System.out.print(it.next() + SPACE);
-            }
-        }
-        catch (IOException e){
-            System.out.println("An error occured");
-            e.printStackTrace();
         }
     }
 }
