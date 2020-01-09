@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class App {
-    static String classFullName;
+    private static String classFullName;
     private static final String HEADER = "import ballerinax/java";
     private static final String FUNCTION ="function";
     private static final String SPACE = " ";
@@ -49,12 +49,11 @@ public class App {
 
         try {
             FileWriter wObj = new FileWriter("../Bal_Project/src/module_bal/external_functions.bal");
-            wObj.write(HEADER+SEMICOLON+NEW_LINE);
+            wObj.write(HEADER+SEMICOLON+NEW_LINE+NEW_LINE);
+
             Method[] methods = cls.getDeclaredMethods();
             for (Method method:methods) {
-
-                wObj.write(FUNCTION+SPACE);
-                wObj.write(method.getName());
+                wObj.write(FUNCTION+SPACE+method.getName());
 
                 Class<?>[] parameter = method.getParameterTypes();
                 if (parameter == null) {
@@ -86,24 +85,14 @@ public class App {
                 if( returnType!= "void"){
                     wObj.write(SPACE+RETURN);
                 }
-                wObj.write(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE);
-                wObj.write(method.getName()+QUOTE+COMMA+NEW_LINE);
-                wObj.write(CLASSNAME+QUOTE);
-                wObj.write(classFullName);
-                wObj.write(QUOTE+NEW_LINE+RIGHTBRACE+EXTERNAL_KEYWORD+SEMICOLON);
-                wObj.write(NEW_LINE);
-
+                wObj.write(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE+method.getName()+QUOTE+COMMA+NEW_LINE+CLASSNAME+QUOTE+classFullName+QUOTE+NEW_LINE+RIGHTBRACE+EXTERNAL_KEYWORD+SEMICOLON+NEW_LINE+NEW_LINE);
             }
             wObj.close();
-
-
         }
         catch (IOException e){
             System.out.println("An error occured");
             e.printStackTrace();
         }
-
         return null;
     }
-
 }
