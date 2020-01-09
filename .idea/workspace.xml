@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4e5a63d-d1b7-42d2-96bd-3462142482ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bal_Project/src/module_bal/external_functions.bal" beforeDir="false" afterPath="$PROJECT_DIR$/Bal_Project/src/module_bal/external_functions.bal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java" afterDir="false" />
@@ -32,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/myapp3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -64,7 +63,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578475894340</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Checking for parameter types of method">
+      <created>1578475952833</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578475952833</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -76,10 +82,10 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578398712017" />
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578475894244">
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578475952781">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475894244" />
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578475952781" />
     <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578459513751">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
