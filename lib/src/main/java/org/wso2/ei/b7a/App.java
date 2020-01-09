@@ -1,4 +1,6 @@
 package org.wso2.ei.b7a;
+import java.util.*;
+import java.util.stream.Stream;
 import java.lang.reflect.*;
 import java.lang.Class.*;
 import java.io.IOException;
@@ -46,53 +48,61 @@ public class App {
 
     public static String writeMethod(Class cls,String classFullName){
 
-
-        try {
-            FileWriter wObj = new FileWriter("../Bal_Project/src/module_bal/external_functions.bal");
-            wObj.write(HEADER+SEMICOLON+NEW_LINE+NEW_LINE);
+            List<String> list = new ArrayList<>();
+            list.add(HEADER+SEMICOLON+NEW_LINE+NEW_LINE);
 
             Method[] methods = cls.getDeclaredMethods();
             for (Method method:methods) {
-                wObj.write(FUNCTION+SPACE+method.getName());
+                list.add(FUNCTION+SPACE+method.getName());
 
                 Class<?>[] parameter = method.getParameterTypes();
                 if (parameter == null) {
-                    wObj.write(BRACKETS);
+                    list.add(BRACKETS);
                 }
                 else{
-                    wObj.write(LEFTBRACKET);
+                    list.add(LEFTBRACKET);
                     for(int i=0;i<parameter.length;i++) {
                         Parameter[] parameterName = method.getParameters();
                         if(parameter[i].getSimpleName()=="int") {
-                            wObj.write(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
+                            list.add(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
                             if(i<parameter.length-1){
-                                wObj.write(COMMA);
+                                list.add(COMMA);
                             }
                         }
                         else{
-                            wObj.write("handle" + SPACE + parameterName[i].getName());
+                            list.add("handle" + SPACE + parameterName[i].getName());
                             if(i<parameter.length-1){
-                                wObj.write(COMMA);
+                                list.add(COMMA);
                             }
                         }
 
                     }
-                    wObj.write(RIGHTBRACKET);
+                    list.add(RIGHTBRACKET);
                 }
 
                 Class returnParam = method.getReturnType();
                 String returnType=returnParam.getName();
                 if( returnType!= "void"){
-                    wObj.write(SPACE+RETURN);
+                    list.add(SPACE+RETURN);
                 }
-                wObj.write(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE+method.getName()+QUOTE+COMMA+NEW_LINE+CLASSNAME+QUOTE+classFullName+QUOTE+NEW_LINE+RIGHTBRACE+EXTERNAL_KEYWORD+SEMICOLON+NEW_LINE+NEW_LINE);
+                list.add(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE+method.getName()+QUOTE+COMMA+NEW_LINE+CLASSNAME+QUOTE+classFullName+QUOTE+NEW_LINE+RIGHTBRACE+EXTERNAL_KEYWORD+SEMICOLON+NEW_LINE+NEW_LINE);
             }
-            wObj.close();
+            getStream(list);
+
+        return null;
+    }
+
+    public static <T> void getStream(List<T> list){
+        try {
+            Stream<T> stream = list.stream();
+            Iterator<T> it = stream.iterator();
+            while (it.hasNext()) {
+                System.out.print(it.next() + SPACE);
+            }
         }
         catch (IOException e){
             System.out.println("An error occured");
             e.printStackTrace();
         }
-        return null;
     }
 }
