@@ -52,27 +52,39 @@ public class App {
             wObj.write(HEADER+SEMICOLON+NEW_LINE);
             Method[] methods = cls.getDeclaredMethods();
             for (Method method:methods) {
+
                 wObj.write(FUNCTION+SPACE);
                 wObj.write(method.getName());
 
-                Parameter[] parameter = method.getParameters();
+                Class<?>[] parameter = method.getParameterTypes();
                 if (parameter == null) {
                     wObj.write(BRACKETS);
                 }
                 else{
                     wObj.write(LEFTBRACKET);
-                    for(int i=0;i<parameter.length;i++){
-                        wObj.write(parameter[i].getParameterizedType() + " " + parameter[i].getName());
-                        if(i<parameter.length-1){
-                            wObj.write(COMMA);
+                    for(int i=0;i<parameter.length;i++) {
+                        Parameter[] parameterName = method.getParameters();
+                        if(parameter[i].getSimpleName()=="int") {
+                            wObj.write(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
+                            if(i<parameter.length-1){
+                                wObj.write(COMMA);
+                            }
                         }
+                        else{
+                            wObj.write("handle" + SPACE + parameterName[i].getName());
+                            if(i<parameter.length-1){
+                                wObj.write(COMMA);
+                            }
+                        }
+
                     }
                     wObj.write(RIGHTBRACKET);
                 }
+
                 Class returnParam = method.getReturnType();
                 String returnType=returnParam.getName();
                 if( returnType!= "void"){
-                    wObj.write(RETURN);
+                    wObj.write(SPACE+RETURN);
                 }
                 wObj.write(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE);
                 wObj.write(method.getName()+QUOTE+COMMA+NEW_LINE);
