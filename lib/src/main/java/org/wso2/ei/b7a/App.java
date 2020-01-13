@@ -31,72 +31,80 @@ public class App {
         TestJava obj = new TestJava();
         Class cls = obj.getClass();
         classFullName=giveFullClass(cls);
-        writeToStream(cls,classFullName);
+        List<String> list=writeToStream(cls,classFullName);
+        writeToFile(list);
     }
 
     public static String giveFullClass(Class cls) {
 
-        classFullName=cls.getName();
+        classFullName = cls.getName();
         return classFullName;
     }
 
-    public static String giveSimpleClass(Class cls) {
+    public static List<String> writeToStream(Class cls, String classFullName) {
 
-        String simpleName = cls.getSimpleName();
-        return simpleName;
-    }
+        List<String> list = new ArrayList<>();
+        list.add(HEADER + SEMICOLON + NEW_LINE + NEW_LINE);
 
-    public static String writeToStream(Class cls,String classFullName){
+        Method[] methods = cls.getDeclaredMethods();
+        for (Method method : methods) {
+            list.add(FUNCTION + SPACE + method.getName());
 
-            List<String> list = new ArrayList<>();
-            list.add(HEADER+SEMICOLON+NEW_LINE+NEW_LINE);
-
-            Method[] methods = cls.getDeclaredMethods();
-            for (Method method:methods) {
-                list.add(FUNCTION+SPACE+method.getName());
-
-                Class<?>[] parameter = method.getParameterTypes();
-                if (parameter == null) {
-                    list.add(BRACKETS);
-                }
-                else{
-                    list.add(LEFTBRACKET);
-                    for(int i=0;i<parameter.length;i++) {
-                        Parameter[] parameterName = method.getParameters();
-                        if(parameter[i].getSimpleName()=="int") {
-                            list.add(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
-                            if(i<parameter.length-1){
-                                list.add(COMMA);
-                            }
+            Class<?>[] parameter = method.getParameterTypes();
+            if (parameter == null) {
+                list.add(BRACKETS);
+            } else {
+                list.add(LEFTBRACKET);
+                for (int i = 0; i < parameter.length; i++) {
+                    Parameter[] parameterName = method.getParameters();
+                    if (parameter[i].getSimpleName() == "int") {
+                        list.add(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+                            list.add(COMMA);
                         }
-                        else{
-                            list.add("handle" + SPACE + parameterName[i].getName());
-                            if(i<parameter.length-1){
-                                list.add(COMMA);
-                            }
+                    } else {
+                        list.add("handle" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+                            list.add(COMMA);
                         }
-
                     }
-                    list.add(RIGHTBRACKET);
-                }
 
-                Class returnParam = method.getReturnType();
-                String returnType=returnParam.getName();
-                if( returnType!= "void"){
-                    list.add(SPACE+RETURN);
                 }
-                list.add(JAVAMETHOD+LEFTBRACE+NEW_LINE+METHODNAME+QUOTE+method.getName()+QUOTE+COMMA+NEW_LINE+CLASSNAME+QUOTE+classFullName+QUOTE+NEW_LINE+RIGHTBRACE+EXTERNAL_KEYWORD+SEMICOLON+NEW_LINE+NEW_LINE);
+                list.add(RIGHTBRACKET);
             }
-            getStream(list);
 
-        return null;
+            Class returnParam = method.getReturnType();
+            String returnType = returnParam.getName();
+            if (returnType != "void") {
+                list.add(SPACE + RETURN);
+            }
+            list.add(JAVAMETHOD + LEFTBRACE + NEW_LINE + METHODNAME + QUOTE + method.getName() + QUOTE + COMMA + NEW_LINE + CLASSNAME + QUOTE + classFullName + QUOTE + NEW_LINE + RIGHTBRACE + EXTERNAL_KEYWORD + SEMICOLON + NEW_LINE + NEW_LINE);
+        }
+        getStream(list);
+
+        return list;
     }
 
-    public static <T> void getStream(List<T> list){
-            Stream<T> stream = list.stream();
-            Iterator<T> it = stream.iterator();
-            while (it.hasNext()) {
-                System.out.print(it.next() + SPACE);
+    public static <T> void getStream(List<T> list) {
+        Stream<T> stream = list.stream();
+        Iterator<T> it = stream.iterator();
+        while (it.hasNext()) {
+            System.out.print(it.next() + SPACE);
         }
+    }
+
+    public static String writeToFile(List<String> list) {
+        try {
+            FileWriter wObj = new FileWriter("../Bal_Project/src/module_bal/external_functions.bal");
+            for (String temp : list) {
+                wObj.write(temp);
+            }
+            wObj.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occured");
+            e.printStackTrace();
+        }
+        return null;
     }
 }
