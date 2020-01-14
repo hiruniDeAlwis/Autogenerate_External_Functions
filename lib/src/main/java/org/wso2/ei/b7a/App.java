@@ -17,7 +17,7 @@ public class App {
     private static final String LEFTBRACE = "{";
     private static final String RIGHTBRACE = "}";
     private static final String COMMA = ",";
-    private static final String RETURN= "returns handle ";
+    private static final String RETURN= "returns ";
     private static final String JAVAMETHOD = " = @java:Method";
     private static final String METHODNAME = "name : ";
     private static final String CLASSNAME = "class : ";
@@ -57,12 +57,35 @@ public class App {
                 list.add(LEFTBRACKET);
                 for (int i = 0; i < parameter.length; i++) {
                     Parameter[] parameterName = method.getParameters();
-                    if (parameter[i].getSimpleName() == "int") {
-                        list.add(parameter[i].getSimpleName() + SPACE + parameterName[i].getName());
+                    if (parameter[i].getSimpleName() == "int" | parameter[i].getSimpleName() == "long" | parameter[i].getSimpleName() == "short" ) {
+                        list.add("int" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
                             list.add(COMMA);
                         }
-                    } else {
+                    }
+
+                    else if (parameter[i].getSimpleName() == "float" | parameter[i].getSimpleName() == "double" ) {
+                        list.add("float" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+                            list.add(COMMA);
+                        }
+                    }
+
+                    else if (parameter[i].getSimpleName() == "byte" ) {
+                        list.add("byte" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+                            list.add(COMMA);
+                        }
+                    }
+
+                    else if (parameter[i].getSimpleName() == "boolean" ) {
+                        list.add("boolean" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+                            list.add(COMMA);
+                        }
+                    }
+
+                    else {
                         list.add("handle" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
                             list.add(COMMA);
@@ -76,7 +99,21 @@ public class App {
             Class returnParam = method.getReturnType();
             String returnType = returnParam.getName();
             if (returnType != "void") {
-                list.add(SPACE + RETURN);
+                if((returnType=="int") | (returnType=="long") | (returnType=="short"))
+                list.add(SPACE + RETURN + "int ");
+
+                else if((returnType=="float") | (returnType=="double") )
+                    list.add(SPACE + RETURN + "float ");
+
+                else if((returnType=="byte"))
+                    list.add(SPACE + RETURN + "byte ");
+
+                else if((returnType=="boolean"))
+                    list.add(SPACE + RETURN + "boolean ");
+
+                else{
+                    list.add(SPACE + RETURN + "handle ");
+                }
             }
             list.add(JAVAMETHOD + LEFTBRACE + NEW_LINE + METHODNAME + QUOTE + method.getName() + QUOTE + COMMA + NEW_LINE + CLASSNAME + QUOTE + classFullName + QUOTE + NEW_LINE + RIGHTBRACE + EXTERNAL_KEYWORD + SEMICOLON + NEW_LINE + NEW_LINE);
         }
