@@ -1,6 +1,28 @@
 package org.wso2.ei.b7a;
 
 public class TestJava {
+
+    int age;
+    int amount;
+    String name;
+
+    public TestJava(){
+
+    }
+
+    public TestJava(int age){
+        this.age=age;
+    }
+
+    public TestJava(String name){
+        this.name=name;
+    }
+
+    public TestJava(int age,int amount){
+        this.age=age;
+        this.amount=amount;
+    }
+
     public static void printText() {
 
         System.out.println("Hello World!");

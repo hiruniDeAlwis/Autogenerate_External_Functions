@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578895603994</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding constants">
+      <created>1578989406928</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578989406929</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,10 +132,10 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578398712017" />
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578895603589">
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578989406623">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578895603589" />
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578989406623" />
     <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578459513751">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
@@ -145,5 +152,16 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="589" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1853.1053@0.27.1853.1053" timestamp="1578557416363" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

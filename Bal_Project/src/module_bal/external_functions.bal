@@ -55,3 +55,23 @@ name : "getShort",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
 
+function TestJava(int arg0) returns handle = @java:Constructor{
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["int"]
+}external;
+
+function TestJava1(handle arg0) returns handle = @java:Constructor{
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["java.lang.String"]
+}external;
+
+function TestJava2(int arg0,int arg1) returns handle = @java:Constructor{
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["int,int"]
+}external;
+
+function TestJava3() returns handle = @java:Constructor{
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : [""]
+}external;
+

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class App {
+
     private static String classFullName;
     private static final String HEADER = "import ballerinax/java";
     private static final String FUNCTION ="function";
@@ -21,29 +22,45 @@ public class App {
     private static final String JAVAMETHOD = " = @java:Method";
     private static final String METHODNAME = "name : ";
     private static final String CLASSNAME = "class : ";
+    private static final String PARAMETER_TYPE_NAME = "paramTypes : ";
     private static final String QUOTE = "\"";
     private static final String EXTERNAL_KEYWORD = "external";
     private static final String SEMICOLON = ";";
     private static final String NEW_LINE = "\n";
+    private static final String RETURN_FOR_CONSTRUCTOR= "returns handle = @java:Constructor";
+    private static final String LEFT_SQUARE_BRACKET = "[";
+    private static final String RIGHT_SQUARE_BRACKET = "]";
 
 
     public static void main(String...args){
+
         TestJava obj = new TestJava();
         Class cls = obj.getClass();
-        classFullName=giveFullClass(cls);
-        List<String> list=writeToStream(cls,classFullName);
+        classFullName=giveClass(cls);
+        List<String> list=writeToList(cls,classFullName);
         writeToFile(list);
     }
 
-    public static String giveFullClass(Class cls) {
+    public static String giveClass(Class cls) {
 
         classFullName = cls.getName();
         return classFullName;
     }
 
-    public static List<String> writeToStream(Class cls, String classFullName) {
+    public static String giveSimpleName(String ClassFullName){
+        String className=null;
+        int firstChar=classFullName.lastIndexOf ('.') + 1;
+        if ( firstChar>0) {
+            className = classFullName.substring(firstChar);
+        }
+        return className;
+    }
+
+
+    public static List<String> writeToList(Class cls, String classFullName) {
 
         List<String> list = new ArrayList<>();
+
         list.add(HEADER + SEMICOLON + NEW_LINE + NEW_LINE);
 
         Method[] methods = cls.getDeclaredMethods();
@@ -51,43 +68,45 @@ public class App {
             list.add(FUNCTION + SPACE + method.getName());
 
             Class<?>[] parameter = method.getParameterTypes();
+
             if (parameter == null) {
                 list.add(BRACKETS);
             } else {
                 list.add(LEFTBRACKET);
                 for (int i = 0; i < parameter.length; i++) {
                     Parameter[] parameterName = method.getParameters();
-                    if (parameter[i].getSimpleName() == "int" | parameter[i].getSimpleName() == "long" | parameter[i].getSimpleName() == "short" ) {
+                    if (parameter[i].getSimpleName() == "int" | parameter[i].getSimpleName() == "long" | parameter[i].getSimpleName() == "short") {
+
                         list.add("int" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
+
                             list.add(COMMA);
                         }
-                    }
+                    } else if (parameter[i].getSimpleName() == "float" | parameter[i].getSimpleName() == "double") {
 
-                    else if (parameter[i].getSimpleName() == "float" | parameter[i].getSimpleName() == "double" ) {
                         list.add("float" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
+
                             list.add(COMMA);
                         }
-                    }
+                    } else if (parameter[i].getSimpleName() == "byte") {
 
-                    else if (parameter[i].getSimpleName() == "byte" ) {
                         list.add("byte" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
+
                             list.add(COMMA);
                         }
-                    }
+                    } else if (parameter[i].getSimpleName() == "boolean") {
 
-                    else if (parameter[i].getSimpleName() == "boolean" ) {
                         list.add("boolean" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
+
                             list.add(COMMA);
                         }
-                    }
-
-                    else {
+                    } else {
                         list.add("handle" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
+
                             list.add(COMMA);
                         }
                     }
@@ -98,28 +117,106 @@ public class App {
 
             Class returnParam = method.getReturnType();
             String returnType = returnParam.getName();
-            if (returnType != "void") {
-                if((returnType=="int") | (returnType=="long") | (returnType=="short"))
-                list.add(SPACE + RETURN + "int ");
 
-                else if((returnType=="float") | (returnType=="double") )
+            if (returnType != "void") {
+
+                if ((returnType == "int") | (returnType == "long") | (returnType == "short"))
+                    list.add(SPACE + RETURN + "int ");
+
+                else if ((returnType == "float") | (returnType == "double"))
                     list.add(SPACE + RETURN + "float ");
 
-                else if((returnType=="byte"))
+                else if ((returnType == "byte"))
                     list.add(SPACE + RETURN + "byte ");
 
-                else if((returnType=="boolean"))
+                else if ((returnType == "boolean"))
                     list.add(SPACE + RETURN + "boolean ");
 
-                else{
+                else {
                     list.add(SPACE + RETURN + "handle ");
                 }
             }
             list.add(JAVAMETHOD + LEFTBRACE + NEW_LINE + METHODNAME + QUOTE + method.getName() + QUOTE + COMMA + NEW_LINE + CLASSNAME + QUOTE + classFullName + QUOTE + NEW_LINE + RIGHTBRACE + EXTERNAL_KEYWORD + SEMICOLON + NEW_LINE + NEW_LINE);
         }
-        getStream(list);
+//.......................................................................................................................................................................................................................................
+        Constructor[] constructors = cls.getConstructors();
+        for (int j=0; j<constructors.length;j++) {
+            if(j==0) {
+                list.add(FUNCTION + SPACE + giveSimpleName(constructors[j].getName()));
+            }
+            else {
+                list.add(FUNCTION + SPACE + giveSimpleName(constructors[j].getName())+j);
+            }
+            Class<?>[] parameter = constructors[j].getParameterTypes();
 
+            if (parameter == null) {
+                list.add(BRACKETS);
+            }
+            else {
+                list.add(LEFTBRACKET);
+                for (int i = 0; i < parameter.length; i++) {
+                    Parameter[] parameterName = constructors[j].getParameters();
+                    if (parameter[i].getSimpleName() == "int" | parameter[i].getSimpleName() == "long" | parameter[i].getSimpleName() == "short") {
+
+                        list.add("int" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    }
+                    else if (parameter[i].getSimpleName() == "float" | parameter[i].getSimpleName() == "double") {
+
+                        list.add("float" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    } else if (parameter[i].getSimpleName() == "byte") {
+
+                        list.add("byte" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    } else if (parameter[i].getSimpleName() == "boolean") {
+
+                        list.add("boolean" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    } else {
+                        list.add("handle" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    }
+
+                }
+                list.add(RIGHTBRACKET);
+            }
+            list.add(SPACE + RETURN_FOR_CONSTRUCTOR + LEFTBRACE + NEW_LINE + CLASSNAME + QUOTE + classFullName + QUOTE + COMMA + NEW_LINE );
+            Class<?>[] param = constructors[j].getParameterTypes();
+
+            if (param == null) {
+
+            } else {
+                list.add(PARAMETER_TYPE_NAME + LEFT_SQUARE_BRACKET+ QUOTE);
+                for (int i = 0; i < param.length; i++) {
+                    Parameter[] paramName = constructors[j].getParameters();
+                    list.add(param[i].getName());
+                    if (i < param.length - 1) {
+
+                        list.add(COMMA);
+                    }
+                    }
+                    list.add(QUOTE + RIGHT_SQUARE_BRACKET + NEW_LINE + RIGHTBRACE + EXTERNAL_KEYWORD + SEMICOLON + NEW_LINE + NEW_LINE);
+                }
+                getStream(list);
+            }
         return list;
+
     }
 
     public static <T> void getStream(List<T> list) {
