@@ -1,11 +1,11 @@
 import ballerinax/java;
 
-function printText123() = @java:Method{
+function printText1() = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
 
-function printText23(handle arg0) = @java:Method{
+function printText2(handle arg0,handle arg1) = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
@@ -15,7 +15,7 @@ name : "printText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
 
-function printText(handle arg0,handle arg1) = @java:Method{
+function printText(handle arg0) = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
@@ -52,11 +52,6 @@ class : "org.wso2.ei.b7a.TestJava"
 
 function subtractLong(int arg0,int arg1) returns int  = @java:Method{
 name : "subtractLong",
-class : "org.wso2.ei.b7a.TestJava"
-}external;
-
-function maxOfIntArray(handle arg0) returns int  = @java:Method{
-name : "maxOfIntArray",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
 

@@ -58,7 +58,8 @@ public class App {
 
 
     public static List<String> writeToList(Class cls, String classFullName) {
-
+        String method = null;
+        int num=0;
         List<String> list = new ArrayList<>();
 
         list.add(HEADER + SEMICOLON + NEW_LINE + NEW_LINE);
@@ -67,12 +68,14 @@ public class App {
 
         for (int a = 0; a < methods.length; a++) {
             list.add(FUNCTION + SPACE + methods[a].getName());
-            String method = null;
+
             for (int b = a + 1; b < methods.length; b++) {
                 if (methods[a].getName() == methods[b].getName()) {
-                    method = "" + b;
+                    num=a+1;
+                    method = "" + num;
                     list.add(method);
                 }
+                break;
             }
             Class<?>[] parameter = methods[a].getParameterTypes();
 
