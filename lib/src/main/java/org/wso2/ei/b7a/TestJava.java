@@ -15,6 +15,7 @@ public class TestJava {
     }
 
     public TestJava(String name){
+
         this.name=name;
     }
 
@@ -26,6 +27,23 @@ public class TestJava {
     public static void printText() {
 
         System.out.println("Hello World!");
+    }
+
+    public static void printText(String msg) {
+
+        System.out.println("Hello World!"+msg);
+    }
+
+    public static void printText(String msg1,String msg2) {
+
+        System.out.println("1st message: "+msg1);
+        System.out.println("2nd message: "+msg2);
+    }
+
+    public static void printText(String name,int age) {
+
+        System.out.println("name: "+name);
+        System.out.println("age: "+age);
     }
 
     public static void getText(String name) {
@@ -73,7 +91,7 @@ public class TestJava {
         return sub;
     }
 
-    public static int maxOfIntArray(int[] myarray){
+    /*public static int maxOfIntArray(int[] myarray){
 
         int maximum=0;
         for(int i=0; i<myarray.length; i++ ) {
@@ -82,7 +100,7 @@ public class TestJava {
             }
         }
         return maximum;
-    }
+    }*/
 
     public static boolean checkIfTrue(boolean x) {
 
