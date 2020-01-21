@@ -1,6 +1,21 @@
 import ballerinax/java;
 
-function printText() = @java:Method{
+function printText123() = @java:Method{
+name : "printText",
+class : "org.wso2.ei.b7a.TestJava"
+}external;
+
+function printText23(handle arg0) = @java:Method{
+name : "printText",
+class : "org.wso2.ei.b7a.TestJava"
+}external;
+
+function printText3(handle arg0,int arg1) = @java:Method{
+name : "printText",
+class : "org.wso2.ei.b7a.TestJava"
+}external;
+
+function printText(handle arg0,handle arg1) = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
@@ -60,9 +75,9 @@ class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["int"]
 }external;
 
-function TestJava1(handle arg0) returns handle = @java:Constructor{
+function TestJava1() returns handle = @java:Constructor{
 class : "org.wso2.ei.b7a.TestJava",
-paramTypes : ["java.lang.String"]
+paramTypes : [""]
 }external;
 
 function TestJava2(int arg0,int arg1) returns handle = @java:Constructor{
@@ -70,8 +85,8 @@ class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["int,int"]
 }external;
 
-function TestJava3() returns handle = @java:Constructor{
+function TestJava3(handle arg0) returns handle = @java:Constructor{
 class : "org.wso2.ei.b7a.TestJava",
-paramTypes : [""]
+paramTypes : ["java.lang.String"]
 }external;
 

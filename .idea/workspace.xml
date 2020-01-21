@@ -18,6 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
@@ -32,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -132,18 +138,26 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="1230" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578398712017" />
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1578989406623">
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2" timestamp="1579522283863">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1578989406623" />
-    <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578459513751">
+    <state x="841" y="149" width="1002" height="807" key="CommitChangelistDialog2/0.27.1853.1053@0.27.1853.1053" timestamp="1579522283863" />
+    <state x="1172" y="310" width="501" height="484" key="FileChooserDialogImpl" timestamp="1579582754309">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
-    <state x="1172" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1853.1053@0.27.1853.1053" timestamp="1578459513751" />
+    <state x="1172" y="310" width="501" height="484" key="FileChooserDialogImpl/0.27.1853.1053@0.27.1853.1053" timestamp="1579582754309" />
     <state x="46" y="289" width="824" height="526" key="IDE.errors.dialog" timestamp="1578904482586">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="46" y="289" width="824" height="526" key="IDE.errors.dialog/0.27.1853.1053@0.27.1853.1053" timestamp="1578904482586" />
+    <state x="415" y="187" key="SettingsEditor" timestamp="1579583019116">
+      <screen x="0" y="27" width="1853" height="1053" />
+    </state>
+    <state x="415" y="187" key="SettingsEditor/0.27.1853.1053@0.27.1853.1053" timestamp="1579583019116" />
+    <state x="521" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579522294299">
+      <screen x="0" y="27" width="1853" height="1053" />
+    </state>
+    <state x="521" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1853.1053@0.27.1853.1053" timestamp="1579522294299" />
     <state x="1157" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578475906766">
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
@@ -152,16 +166,5 @@
       <screen x="0" y="27" width="1853" height="1053" />
     </state>
     <state x="589" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1853.1053@0.27.1853.1053" timestamp="1578557416363" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/lib/src/main/java/org/wso2/ei/b7a/App.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
