@@ -3,3 +3,12 @@ org-name= "hiruni"
 version= "0.1.0"
 
 [dependencies]
+
+[platform]
+target = "java8"
+
+[[platform.libraries]]
+artifactId = "Bal_Project"
+path="../lib/target/lib-1.0-SNAPSHOT.jar"
+groupId = "org.wso2.ei.b7a"
+modules=["module_bal"]

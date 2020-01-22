@@ -2,22 +2,30 @@ import ballerinax/java;
 
 function printText1() = @java:Method{
 name : "printText",
-class : "org.wso2.ei.b7a.TestJava"
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : []
+
 }external;
 
 function printText2(handle arg0,handle arg1) = @java:Method{
 name : "printText",
-class : "org.wso2.ei.b7a.TestJava"
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["java.lang.String","java.lang.String"]
+
 }external;
 
-function printText3(handle arg0,int arg1) = @java:Method{
+function printText3(int arg0,int arg1) = @java:Method{
 name : "printText",
-class : "org.wso2.ei.b7a.TestJava"
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["int","int"]
+
 }external;
 
 function printText(handle arg0) = @java:Method{
 name : "printText",
-class : "org.wso2.ei.b7a.TestJava"
+class : "org.wso2.ei.b7a.TestJava",
+paramTypes : ["java.lang.String"]
+
 }external;
 
 function getText(handle arg0) = @java:Method{
@@ -72,12 +80,12 @@ paramTypes : ["int"]
 
 function TestJava1() returns handle = @java:Constructor{
 class : "org.wso2.ei.b7a.TestJava",
-paramTypes : [""]
+paramTypes : []
 }external;
 
 function TestJava2(int arg0,int arg1) returns handle = @java:Constructor{
 class : "org.wso2.ei.b7a.TestJava",
-paramTypes : ["int,int"]
+paramTypes : ["int","int"]
 }external;
 
 function TestJava3(handle arg0) returns handle = @java:Constructor{
