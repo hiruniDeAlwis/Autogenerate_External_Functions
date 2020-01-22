@@ -114,6 +114,13 @@ public class App {
 
                             list.add(COMMA);
                         }
+                    }else if (parameter[i].getSimpleName() == "char"||parameter[i].getName()=="java.lang.String") {
+
+                        list.add("string" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
                     } else {
                         list.add("handle" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
@@ -142,6 +149,9 @@ public class App {
 
                 else if ((returnType == "boolean"))
                     list.add(SPACE + RETURN + "boolean ");
+
+                else if ((returnType == "java.lang.String")||(returnType=="char"))
+                    list.add(SPACE + RETURN + "string ");
 
                 else {
                     list.add(SPACE + RETURN + "handle ");
@@ -210,7 +220,14 @@ public class App {
 
                             list.add(COMMA);
                         }
-                    } else {
+                    } else if (parameter[i].getSimpleName() == "char"||parameter[i].getName()=="java.lang.String") {
+
+                        list.add("string" + SPACE + parameterName[i].getName());
+                        if (i < parameter.length - 1) {
+
+                            list.add(COMMA);
+                        }
+                    }else {
                         list.add("handle" + SPACE + parameterName[i].getName());
                         if (i < parameter.length - 1) {
 

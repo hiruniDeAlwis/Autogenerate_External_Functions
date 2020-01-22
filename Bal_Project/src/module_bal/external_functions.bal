@@ -7,33 +7,33 @@ paramTypes : []
 
 }external;
 
-function printText2(handle arg0,handle arg1) = @java:Method{
+function printText2(string arg0,string arg1) = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["java.lang.String","java.lang.String"]
 
 }external;
 
-function printText3(int arg0,int arg1) = @java:Method{
+function printText3(int arg0,int arg1) returns int  = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["int","int"]
 
 }external;
 
-function printText(handle arg0) = @java:Method{
+function printText(string arg0) = @java:Method{
 name : "printText",
 class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["java.lang.String"]
 
 }external;
 
-function getText(handle arg0) = @java:Method{
+function getText(string arg0) = @java:Method{
 name : "getText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
 
-function concatinateText(handle arg0,handle arg1) returns handle  = @java:Method{
+function concatinateText(string arg0,string arg1) returns string  = @java:Method{
 name : "concatinateText",
 class : "org.wso2.ei.b7a.TestJava"
 }external;
@@ -88,7 +88,7 @@ class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["int","int"]
 }external;
 
-function TestJava3(handle arg0) returns handle = @java:Constructor{
+function TestJava3(string arg0) returns handle = @java:Constructor{
 class : "org.wso2.ei.b7a.TestJava",
 paramTypes : ["java.lang.String"]
 }external;

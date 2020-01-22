@@ -40,9 +40,10 @@ public class TestJava {
         System.out.println("2nd message: "+msg2);
     }
 
-    public static void printText(int age,int amount) {
+    public static int printText(int age,int amount) {
 
         System.out.println("age: "+age);
+        return age+5;
     }
 
     public static void getText(String name) {
