@@ -91,16 +91,25 @@ public class TestJava {
         return sub;
     }
 
-    /*public static int maxOfIntArray(int[] myarray){
+    public static int maxOfIntArray(int maximum,int[] myarray){
 
-        int maximum=0;
         for(int i=0; i<myarray.length; i++ ) {
             if(myarray[i]>maximum) {
                 maximum = myarray[i];
             }
         }
         return maximum;
-    }*/
+    }
+
+    public static int[] maxOfIntArray(int[] myarray){
+
+        return myarray;
+    }
+
+    public static String[] stringArray(String[] myarray){
+
+        return myarray;
+    }
 
     public static boolean checkIfTrue(boolean x) {
 
@@ -111,5 +120,9 @@ public class TestJava {
         else{
             return false;
         }
+    }
+
+    public static void varargsCheck(String...args){
+        System.out.println("hello world!");
     }
 }
