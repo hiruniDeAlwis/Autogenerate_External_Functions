@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4e5a63d-d1b7-42d2-96bd-3462142482ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/lib-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/lib-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/surefire-reports/TEST-org.wso2.ei.b7a.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/surefire-reports/TEST-org.wso2.ei.b7a.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/surefire-reports/org.wso2.ei.b7a.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/surefire-reports/org.wso2.ei.b7a.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bal_Project/src/module_bal/main.bal" beforeDir="false" afterPath="$PROJECT_DIR$/Bal_Project/src/module_bal/main.bal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580461095244</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="generating external functions for a jar">
+      <created>1580461414581</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1580461414581</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
