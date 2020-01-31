@@ -281,7 +281,7 @@ public class App {
                             list.add(QUOTE + param[i].getName() + QUOTE);
                             if (i < param.length - 1) {
 
-                                list.add(COMMA);
+                                list.add(COMMA);                                                                                                                  //Add a comma if more than one parameter type
                             }
                         }
                         list.add(RIGHT_SQUARE_BRACKET + NEW_LINE);
