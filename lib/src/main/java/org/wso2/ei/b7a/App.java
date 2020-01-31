@@ -41,10 +41,10 @@ public class App {
     public static void main(String...args){
 
         String JarName="//home/hiruni/javaLibrary/target/javaLibrary-1.0-SNAPSHOT.jar";                                                   //path for the java library jar should be given here
-        getClassNamesFromJar(JarName);
+        getClassDetailsFromJar(JarName);
     }
 
-    public static void getClassNamesFromJar(String JarName){
+    public static void getClassDetailsFromJar(String JarName){
         try {
             String method=null;                                                                                                             //suffix for overloading methods
             List<String> listOfClasses = new ArrayList<>();                                                                                 //list of class names in the jar
